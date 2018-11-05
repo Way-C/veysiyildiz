@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './global-styles';
+
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
@@ -15,7 +17,6 @@ import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import StepContent from '@material-ui/core/StepContent';
-
 import { withStyles } from '@material-ui/core/styles';
 import withRoot from '../withRoot';
 
@@ -25,10 +26,13 @@ const styles = theme => ({
     margin: '0',
     background: '#2a2c2e',
     minHeight: '100vh',
+    fontFamily: 'turkish_another_typewriterRg',
   },
   button: {
     background: '#40454a',
-    color: 'white',
+    color: 'white',    
+    fontFamily: 'turkish_another_typewriterRg',
+
     marginTop: theme.spacing.unit * 3,
     marginBottom: theme.spacing.unit * 3,
     '&:hover': {
@@ -49,6 +53,8 @@ const styles = theme => ({
   },
   name: {
     fontSize: '45px',
+    fontFamily: 'turkish_another_typewriterRg',
+
   },
   socialIcon: {
     marginTop: '12px',
