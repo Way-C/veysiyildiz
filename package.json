@@ -9,7 +9,11 @@
     "react-dom": "^16.6.0",
     "react-scripts": "2.1.0",
     "react-social-icons": "^3.0.0",
+<<<<<<< HEAD
     "styled-components": "^4.0.3"
+=======
+    "react-visibility-sensor": "^5.0.2"
+>>>>>>> 8a4f7239436650eadd23f728214585f52207c967
   },
   "scripts": {
     "start": "react-scripts start",

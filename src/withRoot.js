@@ -13,19 +13,16 @@ const theme = createMuiTheme({
     useNextVariants: true,
   },
   overrides: {
-    MuiTypography: { // Name of the component ⚛️ / style sheet
-      root: { // Name of the rule
-        color: 'white', // Some CSS
+    MuiTypography: { 
+      root: { 
+        color: 'white', 
         textAlign: 'center',
       },
-      body2: { // Name of the rule
-        color: 'white', // Some CSS
+      body2: { 
+        color: 'white', 
       },
-
     },
-    
   },
-
 });
 
 function withRoot(Component) {

@@ -1,0 +1,24 @@
+.vertical-timeline {
+  width: 95%;
+  max-width: 1170px;
+  margin: 2em auto;
+  position: relative;
+}
+.vertical-timeline::after {
+  /* clearfix */
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.vertical-timeline::before {
+  /* this is the vertical line */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0px;
+  height: 100%;
+  width: 2px;
+  background: #61b8ff;
+}
+
