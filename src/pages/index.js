@@ -11,18 +11,9 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 
 import { SocialIcon } from 'react-social-icons';
-<<<<<<< HEAD
-import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
-import PhotoCamera from '@material-ui/icons/PhotoCamera';
-import Stepper from '@material-ui/core/Stepper';
-import Step from '@material-ui/core/Step';
-import StepLabel from '@material-ui/core/StepLabel';
-import StepContent from '@material-ui/core/StepContent';
-=======
 import VerticalTimelineElement from '../components/VerticalTimelineElement';
 import VerticalTimeline from '../components/VerticalTimeline';
 
->>>>>>> 8a4f7239436650eadd23f728214585f52207c967
 import { withStyles } from '@material-ui/core/styles';
 import withRoot from '../withRoot';
 
