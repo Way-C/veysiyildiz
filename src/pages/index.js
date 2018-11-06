@@ -7,11 +7,10 @@ import CardContent from '@material-ui/core/CardContent';
 import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+
 import { SocialIcon } from 'react-social-icons';
-import Stepper from '@material-ui/core/Stepper';
-import Step from '@material-ui/core/Step';
-import StepLabel from '@material-ui/core/StepLabel';
-import StepContent from '@material-ui/core/StepContent';
+import VerticalTimelineElement from '../components/VerticalTimelineElement';
+import VerticalTimeline from '../components/VerticalTimeline';
 
 import { withStyles } from '@material-ui/core/styles';
 import withRoot from '../withRoot';
@@ -36,6 +35,10 @@ const styles = theme => ({
     background: '#303337',
     textAlign: 'center',
   },
+  paperTimeline: {
+    background: '#303337',
+  },
+
   profileCard: {
     background: '#40454a',
   },
@@ -55,61 +58,28 @@ const styles = theme => ({
       borderRadius: '10px !important',
     },
   },
+  stepperButton: {
+    marginTop: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
+  },
+  actionsContainer: {
+    marginBottom: theme.spacing.unit * 2,
+  },
+  resetContainer: {
+    padding: theme.spacing.unit * 3,
+  },
 });
-function getSteps() {
-  return ['Select campaign settings', 'Create an ad group', 'Create an ad'];
-}
-
-function getStepContent(step) {
-  switch (step) {
-    case 0:
-      return `For each ad campaign that you create, you can control how much
-              you're willing to spend on clicks and conversions, which networks
-              and geographical locations you want your ads to show on, and more.`;
-    case 1:
-      return 'An ad group contains one or more ads which target a shared set of keywords.';
-    case 2:
-      return `Try out different ad text to see what brings in the most customers,
-              and learn how to enhance your ads using features like ad extensions.
-              If you run into any problems with your ads, find out how to tell if
-              they're running and how to resolve approval issues.`;
-    default:
-      return 'Unknown step';
-  }
-}
 
 class Index extends React.Component {
   state = {
-    open: false,
-    activeStep: 0,
   };
-  handleNext = () => {
-    this.setState(state => ({
-      activeStep: state.activeStep + 1,
-    }));
-  };
-
-  handleBack = () => {
-    this.setState(state => ({
-      activeStep: state.activeStep - 1,
-    }));
-  };
-
-  handleReset = () => {
-    this.setState({
-      activeStep: 0,
-    });
-  };
-
 
   render() {
     const { classes } = this.props;
-    const steps = getSteps();
-    const { activeStep } = this.state;
 
     return (
       <div className={classes.root}>
-        <Grid container spacing={24} style={{maxWidth: '1050px', margin: '0 auto',}}>
+        <Grid container spacing={24} style={{maxWidth: '1050px', margin: '0 auto', width: '100%'}}>
           <Grid item xs={12} sm={4}>
             <Paper className={classes.paper}>
               <Card className={classes.profileCard}>
@@ -125,10 +95,10 @@ class Index extends React.Component {
                   <Typography component="p">
                     FrontEndDeveloper
                   </Typography>
-                  <SocialIcon url="http://facebook.com/jaketrent" color="#ffffff" className={classes.socialIcon} />
-                  <SocialIcon url="http://twitter.com/jaketrent" color="#ffffff" className={classes.socialIcon} />
-                  <SocialIcon url="http://instagram.com/jaketrent" color="#ffffff" className={classes.socialIcon} />
-                  <SocialIcon url="http://linkedin.com/jaketrent" color="#ffffff" className={classes.socialIcon} />
+                  <SocialIcon url="http://facebook.com/biliyem" color="#ffffff" className={classes.socialIcon} />
+                  <SocialIcon url="http://twitter.com/veysiyildiz" color="#ffffff" className={classes.socialIcon} />
+                  <SocialIcon url="http://instagram.com/veysiy" color="#ffffff" className={classes.socialIcon} />
+                  <SocialIcon url="https://www.linkedin.com/in/veysiyildiz/" color="#ffffff" className={classes.socialIcon} />
 
                 </CardContent>
               </Card>
@@ -151,44 +121,100 @@ class Index extends React.Component {
                   <Typography component="h1" className={classes.name}>
                     personal information
                   </Typography>
+                  <p>Marital Status: Married and have a child.</p>
+                  <p>Military Service: Completed in 2006</p>
+                  <p>Place & Date of Birth: Batman / Turkey – 03.08.1981</p>
+
                 </Paper>
               </Grid>
               <Grid item xs={12} >
-                <Paper className={classes.paper}>
-                  <Typography component="h1" className={classes.name}>
-                    work experiences
+                <Paper className={classes.paperTimeline}>
+                  <Typography component="h2" className={classes.name}>
+                    work experience
                   </Typography>
-                    <Stepper activeStep={activeStep} orientation="vertical">
-                      {steps.map((label, index) => {
-                        return (
-                          <Step key={label}>
-                            <StepLabel>{label}</StepLabel>
-                            <StepContent>
-                              <Typography>{getStepContent(index)}</Typography>
-                              <div className={classes.actionsContainer}>
-                                <div>
-                                  <Button
-                                    disabled={activeStep === 0}
-                                    onClick={this.handleBack}
-                                    className={classes.button}
-                                  >
-                                    Back
-                                  </Button>
-                                  <Button
-                                    variant="contained"
-                                    color="primary"
-                                    onClick={this.handleNext}
-                                    className={classes.button}
-                                  >
-                                    {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
-                                  </Button>
-                                </div>
-                              </div>
-                            </StepContent>
-                          </Step>
-                        );
-                      })}
-                    </Stepper>
+                  <Grid container spacing={24} >
+                    <Grid item xs={12} sm={3}>
+                    </Grid>
+                    <Grid item xs={12} sm={9}>
+                      <VerticalTimeline layout={ '1-column' }>
+                        <VerticalTimelineElement
+                          date="Nov 2010 – Present"
+                          className="vertical-timeline-element--work"
+                          dateStyle={{color: '#ffffff'}}
+                          dateInnerStyle={{background: '#e86971'}}
+                        >
+                          <h3 className="vertical-timeline-element-title">Overteam</h3>
+                          <h4 className="vertical-timeline-element-subtitle">Senior Front End Developer</h4>
+                          <p>
+                          ReactJs Front End Development  
+                          Samples  
+                          https://meyhanedeyiz.biz ReactJs, Redux, Redux Saga, Webpack, Node, Es6
+                          </p>
+                          <p>
+                          Front end development and implementation on CMS 
+                          Sample
+                          http://www.arcelikas.com/   .Net Project frontend implementation
+                          http://howtoistanbul.com  WordPress and PHP Symfony 1.4 hybrid 
+                          </p>
+                          <p>
+                          Wordpress full stack development 
+                          Samples  
+                          http://www.yenirakiglobal.com adaptive desktop & mobile
+                          </p>
+                          
+                          <span className={classes.timelineDate}></span>
+                        </VerticalTimelineElement>
+                        <VerticalTimelineElement
+                          date="Apr 2009 – Nov 2010"
+                          className="vertical-timeline-element--work"
+                          dateStyle={{color: '#ffffff'}}
+                          dateInnerStyle={{background: '#61b8ff'}}
+                        >
+                          <h3 className="vertical-timeline-element-title">Madebycat</h3>
+                          <h4 className="vertical-timeline-element-subtitle">Front End Developer</h4>
+                          <p>
+                          Project Planning.
+                          </p>
+                          <p>
+                          Deciding Information Architecture for clients, building websites. 
+                          </p>
+                          <p>
+                          Interface coding and CMS integration of new projects.	
+                          </p>
+                        </VerticalTimelineElement>
+                        <VerticalTimelineElement
+                          date="Nov 2008 – Apr 2009"
+                          className="vertical-timeline-element--work"
+                          dateStyle={{color: '#000000'}}
+                          dateInnerStyle={{background: '#f7d286'}}
+                        >
+                          <h3 className="vertical-timeline-element-title">Madebycat</h3>
+                          <h4 className="vertical-timeline-element-subtitle">Interface Coder</h4>
+                          <p>
+                          Maintenance support for live projects
+                          </p>
+                          <p>
+                          Interface coding for live projects
+                          </p>
+                          <p>
+                          Building entire website frontend from scratch, theming, JS, browser bug fixing. 
+                          </p>
+                        </VerticalTimelineElement>
+                        <VerticalTimelineElement
+                          date="Aug 2008 – Nov 2008"
+                          className="vertical-timeline-element--work"
+                          dateStyle={{color: '#b7b7b7'}}
+                          dateInnerStyle={{background: '#76bb7f'}}
+                        >
+                          <h3 className="vertical-timeline-element-title">Madebycat</h3>
+                          <h4 className="vertical-timeline-element-subtitle">Junior Interface Coder</h4>
+                          <p>
+                            Content editing, HTML CSS bug fixing.
+                          </p>
+                        </VerticalTimelineElement>
+                      </VerticalTimeline>
+                    </Grid>
+                  </Grid>
                 </Paper>
               </Grid>
             </Grid>
