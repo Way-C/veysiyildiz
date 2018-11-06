@@ -167,6 +167,7 @@
 .vertical-timeline-element-dateinner {
   background: #e86971;
   padding: 0;
+  font-size: 12px;
   margin: 0;
   border-right-color: transparent;
   -webkit-clip-path: polygon(0% 0%, 95% 0%, 100% 50%, 95% 100%, 0% 100%);

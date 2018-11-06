@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './global-styles';
 
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
@@ -19,16 +18,15 @@ import withRoot from '../withRoot';
 
 const styles = theme => ({
   root: {
-    paddingTop: theme.spacing.unit * 8,
     margin: '0',
     background: '#2a2c2e',
     minHeight: '100vh',
-    fontFamily: 'turkish_another_typewriterRg',
+    fontFamily: 'monaco',
   },
   button: {
     background: '#40454a',
     color: 'white',    
-    fontFamily: 'turkish_another_typewriterRg',
+    fontFamily: 'monaco',
 
     marginTop: theme.spacing.unit * 3,
     marginBottom: theme.spacing.unit * 3,
@@ -53,8 +51,8 @@ const styles = theme => ({
     margin: '24px auto 0',
   },
   name: {
-    fontSize: '45px',
-    fontFamily: 'turkish_another_typewriterRg',
+    fontSize: '31px',
+    fontFamily: 'monaco',
 
   },
   socialIcon: {
@@ -145,9 +143,9 @@ class Index extends React.Component {
                     <Grid item xs={12} sm={9}>
                       <VerticalTimeline layout={ '1-column' }>
                         <VerticalTimelineElement
-                          date="Nov 2010 – Present"
+                          date="11/2010 – Present"
                           className="vertical-timeline-element--work"
-                          dateStyle={{color: '#ffffff'}}
+                          dateStyle={{color: '#000000'}}
                           dateInnerStyle={{background: '#e86971'}}
                         >
                           <h3 className="vertical-timeline-element-title">Overteam</h3>
@@ -172,9 +170,9 @@ class Index extends React.Component {
                           <span className={classes.timelineDate}></span>
                         </VerticalTimelineElement>
                         <VerticalTimelineElement
-                          date="Apr 2009 – Nov 2010"
+                          date="04/2009 – 11/2010"
                           className="vertical-timeline-element--work"
-                          dateStyle={{color: '#ffffff'}}
+                          dateStyle={{color: '#000000'}}
                           dateInnerStyle={{background: '#61b8ff'}}
                         >
                           <h3 className="vertical-timeline-element-title">Madebycat</h3>
@@ -190,7 +188,7 @@ class Index extends React.Component {
                           </p>
                         </VerticalTimelineElement>
                         <VerticalTimelineElement
-                          date="Nov 2008 – Apr 2009"
+                          date="11/2008 – 04/2009"
                           className="vertical-timeline-element--work"
                           dateStyle={{color: '#000000'}}
                           dateInnerStyle={{background: '#f7d286'}}
@@ -208,9 +206,9 @@ class Index extends React.Component {
                           </p>
                         </VerticalTimelineElement>
                         <VerticalTimelineElement
-                          date="Aug 2008 – Nov 2008"
+                          date="08/2008 – 11/2008"
                           className="vertical-timeline-element--work"
-                          dateStyle={{color: '#b7b7b7'}}
+                          dateStyle={{color: '#000000'}}
                           dateInnerStyle={{background: '#76bb7f'}}
                         >
                           <h3 className="vertical-timeline-element-title">Madebycat</h3>
