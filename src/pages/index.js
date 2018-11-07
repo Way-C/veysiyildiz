@@ -133,6 +133,17 @@ class Index extends React.Component {
                 </Paper>
               </Grid>
               <Grid item xs={12} >
+                <Paper className={classes.paper}>
+                  <Typography component="h1" className={classes.name}>
+                    professional skills
+                  </Typography>
+                  <p>Marital Status: Married and have a child.</p>
+                  <p>Military Service: Completed in 2006</p>
+                  <p>Place & Date of Birth: Batman / Turkey – 03.08.1981</p>
+
+                </Paper>
+              </Grid>
+              <Grid item xs={12} >
                 <Paper className={classes.paperTimeline}>
                   <Typography component="h2" className={classes.name}>
                     work experience
