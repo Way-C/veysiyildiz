@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import VisibilitySensor from 'react-visibility-sensor';
 
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
@@ -10,8 +11,11 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 
 import { SocialIcon } from 'react-social-icons';
-import VerticalTimelineElement from '../components/VerticalTimelineElement';
-import VerticalTimeline from '../components/VerticalTimeline';
+import { Timeline, TimelineItem }  from 'vertical-timeline-component-for-react';
+import SkillsCloud from '../components/SkillsCloud';
+import ColorizeWords from '../components/ColorizeWords';
+import data, { getRandomColor } from '../data';
+
 
 import { withStyles } from '@material-ui/core/styles';
 import withRoot from '../withRoot';
@@ -21,13 +25,10 @@ const styles = theme => ({
     margin: '0',
     background: '#2a2c2e',
     minHeight: '100vh',
-    fontFamily: 'monaco',
   },
   button: {
     background: '#40454a',
     color: 'white',    
-    fontFamily: 'monaco',
-
     marginTop: theme.spacing.unit * 3,
     marginBottom: theme.spacing.unit * 3,
     '&:hover': {
@@ -52,8 +53,6 @@ const styles = theme => ({
   },
   name: {
     fontSize: '31px',
-    fontFamily: 'monaco',
-
   },
   socialIcon: {
     marginTop: '12px',
@@ -76,11 +75,21 @@ const styles = theme => ({
 });
 
 class Index extends React.Component {
-  state = {
-  };
+  constructor(props) {
+    super(props);
+    this.onVisibilitySensorChange = this.onVisibilitySensorChange.bind(this);
+    this.state = { visible: false };
+  }
+
+  onVisibilitySensorChange(isVisible) {
+    if (isVisible) {
+      this.setState({ visible: true });
+    }
+  }
 
   render() {
     const { classes } = this.props;
+    const { skills } = data;
 
     return (
       <div className={classes.root}>
@@ -107,7 +116,7 @@ class Index extends React.Component {
 
                 </CardContent>
               </Card>
-              <Button variant="extendedFab" aria-label="Delete" className={classes.button}>
+              <Button variant="extendedFab" aria-label="download cv" className={classes.button}>
                 download cv
               </Button>
             </Paper>
@@ -119,6 +128,9 @@ class Index extends React.Component {
                   <Typography component="h1" className={classes.name}>
                     about me
                   </Typography>
+                  <Typography component="p">
+                    <ColorizeWords text='Experienced Frontend Developer with a demonstrated history of working in the marketing and advertising industry. Skilled in Javascript, User Experience, SEO, PHP, E-commerce, and WordPress. Focused on React, Redux, Webpack and Node.' />
+                  </Typography>
                 </Paper>
               </Grid>
               <Grid item xs={12} >
@@ -126,9 +138,9 @@ class Index extends React.Component {
                   <Typography component="h1" className={classes.name}>
                     personal information
                   </Typography>
-                  <p>Marital Status: Married and have a child.</p>
-                  <p>Military Service: Completed in 2006</p>
-                  <p>Place & Date of Birth: Batman / Turkey – 03.08.1981</p>
+                  <p><ColorizeWords text='Marital Status: Married and have a child.' /></p>
+                  <p><ColorizeWords text='Military Service: Completed in 2006' /></p>
+                  <p><ColorizeWords text='Place & Date of Birth: Batman / Turkey – 03.08.1981' /></p>
 
                 </Paper>
               </Grid>
@@ -137,9 +149,38 @@ class Index extends React.Component {
                   <Typography component="h1" className={classes.name}>
                     professional skills
                   </Typography>
-                  <p>Marital Status: Married and have a child.</p>
-                  <p>Military Service: Completed in 2006</p>
-                  <p>Place & Date of Birth: Batman / Turkey – 03.08.1981</p>
+                  <VisibilitySensor
+                    partialVisibility 
+                    offset={{ bottom: 80 }}
+                    onChange={this.onVisibilitySensorChange}
+                  >
+                    <SkillsCloud 
+                      className='tag-cloud'
+                      rotate={null}
+                      style={{
+                        fontFamily: 'sans-serif',
+                        // fontSize: () => Math.round(Math.random() * 50) + 16,
+                        fontSize: 30,
+                        color: () => getRandomColor(),
+                        padding: 5,
+                        width: '100%',
+                        height: '600px',
+                      }}>
+                        {skills.map( (item) => ( 
+                          <div 
+                            key={item.name} 
+                            style={{
+                              fontSize: (item.knowledge*5),
+                              fontWeight: 'bold',
+                              opacity: (item.knowledge/10),
+                            }}
+                          >
+                            {item.name}
+                          </div>
+                        ))}
+                    </SkillsCloud>
+
+                  </VisibilitySensor>
 
                 </Paper>
               </Grid>
@@ -149,18 +190,16 @@ class Index extends React.Component {
                     work experience
                   </Typography>
                   <Grid container spacing={24} >
-                    <Grid item xs={12} sm={3}>
-                    </Grid>
-                    <Grid item xs={12} sm={9}>
-                      <VerticalTimeline layout={ '1-column' }>
-                        <VerticalTimelineElement
+                    <Grid item xs={12}>
+                      <Timeline lineColor={'#ddd'}>
+                        <TimelineItem
                           date="11/2010 – Present"
-                          className="vertical-timeline-element--work"
-                          dateStyle={{color: '#000000'}}
+                          className=""
+                          bodyContainerStyle={{color: '#fff'}}
                           dateInnerStyle={{background: '#e86971'}}
                         >
-                          <h3 className="vertical-timeline-element-title">Overteam</h3>
-                          <h4 className="vertical-timeline-element-subtitle">Senior Front End Developer</h4>
+                          <h3>Overteam</h3>
+                          <h4>Senior Front End Developer</h4>
                           <p>
                           ReactJs Front End Development  
                           Samples  
@@ -179,15 +218,15 @@ class Index extends React.Component {
                           </p>
                           
                           <span className={classes.timelineDate}></span>
-                        </VerticalTimelineElement>
-                        <VerticalTimelineElement
+                        </TimelineItem>
+                        <TimelineItem
                           date="04/2009 – 11/2010"
-                          className="vertical-timeline-element--work"
-                          dateStyle={{color: '#000000'}}
+                          className=""
+                          bodyContainerStyle={{color: '#fff'}}
                           dateInnerStyle={{background: '#61b8ff'}}
                         >
-                          <h3 className="vertical-timeline-element-title">Madebycat</h3>
-                          <h4 className="vertical-timeline-element-subtitle">Front End Developer</h4>
+                          <h3>Madebycat</h3>
+                          <h4>Front End Developer</h4>
                           <p>
                           Project Planning.
                           </p>
@@ -197,15 +236,15 @@ class Index extends React.Component {
                           <p>
                           Interface coding and CMS integration of new projects.	
                           </p>
-                        </VerticalTimelineElement>
-                        <VerticalTimelineElement
+                        </TimelineItem>
+                        <TimelineItem
                           date="11/2008 – 04/2009"
-                          className="vertical-timeline-element--work"
-                          dateStyle={{color: '#000000'}}
+                          className=""
+                          bodyContainerStyle={{color: '#fff'}}
                           dateInnerStyle={{background: '#f7d286'}}
                         >
-                          <h3 className="vertical-timeline-element-title">Madebycat</h3>
-                          <h4 className="vertical-timeline-element-subtitle">Interface Coder</h4>
+                          <h3>Madebycat</h3>
+                          <h4>Interface Coder</h4>
                           <p>
                           Maintenance support for live projects
                           </p>
@@ -215,20 +254,20 @@ class Index extends React.Component {
                           <p>
                           Building entire website frontend from scratch, theming, JS, browser bug fixing. 
                           </p>
-                        </VerticalTimelineElement>
-                        <VerticalTimelineElement
+                        </TimelineItem>
+                        <TimelineItem
                           date="08/2008 – 11/2008"
-                          className="vertical-timeline-element--work"
-                          dateStyle={{color: '#000000'}}
+                          className=""
+                          bodyContainerStyle={{color: '#fff'}}
                           dateInnerStyle={{background: '#76bb7f'}}
                         >
-                          <h3 className="vertical-timeline-element-title">Madebycat</h3>
-                          <h4 className="vertical-timeline-element-subtitle">Junior Interface Coder</h4>
+                          <h3>Madebycat</h3>
+                          <h4>Junior Interface Coder</h4>
                           <p>
                             Content editing, HTML CSS bug fixing.
                           </p>
-                        </VerticalTimelineElement>
-                      </VerticalTimeline>
+                        </TimelineItem>
+                      </Timeline>
                     </Grid>
                   </Grid>
                 </Paper>

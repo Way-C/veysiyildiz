@@ -17,9 +17,11 @@ const theme = createMuiTheme({
       root: { 
         color: 'white', 
         textAlign: 'center',
+        fontFamily: 'turkish_another_typewriterRg',
       },
       body2: { 
         color: 'white', 
+        fontFamily: 'turkish_another_typewriterRg',
       },
     },
   },
