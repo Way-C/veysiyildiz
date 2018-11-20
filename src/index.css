@@ -1,0 +1,51 @@
+
+@font-face {
+    font-family: 'turkish_another_typewriterRg';
+    src: url('/fonts/turkish_another_typewriter_regular-webfont.eot');
+    src: url('/fonts/turkish_another_typewriter_regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/turkish_another_typewriter_regular-webfont.woff2') format('woff2'),
+         url('/fonts/turkish_another_typewriter_regular-webfont.woff') format('woff'),
+         url('/fonts/turkish_another_typewriter_regular-webfont.svg#turkish_another_typewriterRg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+body {
+	font-family: 'turkish_another_typewriterRg' !important;
+	font-weight: normal;
+	font: 20px sans-serif;
+}
+.tag-cloud {
+	flex: 1;
+}
+
+.tag-cloud > div {
+	transition: 1.4s;
+}
+
+.tag-item-wrapper {
+	cursor: pointer;
+}
+
+.tag-item-wrapper:hover {
+	z-index: 100;
+}
+
+.tag-item-wrapper:hover .tag-item-tooltip {
+	display: block;
+}
+
+.tag-item-tooltip {
+	background: #c01916;
+	color: white;
+	margin-top: 5px;
+    z-index: 100;
+    display: none;
+	padding: 15px;
+	font-size: 14px;
+	line-height: 1;
+	position: absolute;
+	min-width: 60px;
+	left: 50%;
+	transform: translateX(-50%);
+    text-align: center;
+}
