@@ -9,14 +9,12 @@ const theme = createMuiTheme({
 
   },
   typography: {
-    htmlFontSize: '20px',
     useNextVariants: true,
   },
   overrides: {
     MuiTypography: { 
       root: { 
         color: 'white', 
-        textAlign: 'center',
         fontFamily: 'turkish_another_typewriterRg',
       },
       body2: { 

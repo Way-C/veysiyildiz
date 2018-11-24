@@ -15,7 +15,7 @@ import { Timeline, TimelineItem }  from 'vertical-timeline-component-for-react';
 import SkillsCloud from '../components/SkillsCloud';
 import ColorizeWords from '../components/ColorizeWords';
 import data, { getRandomColor } from '../data';
-
+import avatar from '../veysi.jpg'
 
 import { withStyles } from '@material-ui/core/styles';
 import withRoot from '../withRoot';
@@ -37,22 +37,25 @@ const styles = theme => ({
   },
   paper: {
     background: '#303337',
+    padding: '40px'
+  },
+  paperCenter: {
+    background: '#303337',
     textAlign: 'center',
   },
-  paperTimeline: {
-    background: '#303337',
-  },
-
   profileCard: {
     background: '#40454a',
   },
   avatar: {
-    width: '205px',
-    height: '205px',
+    width: '191px',
+    height: '191px',
     margin: '24px auto 0',
   },
   name: {
     fontSize: '31px',
+  },
+  title: {
+    fontSize: '50px',
   },
   socialIcon: {
     marginTop: '12px',
@@ -93,112 +96,124 @@ class Index extends React.Component {
 
     return (
       <div className={classes.root}>
-        <Grid container spacing={24} style={{maxWidth: '1050px', margin: '0 auto', width: '100%'}}>
-          <Grid item xs={12} sm={4}>
-            <Paper className={classes.paper}>
-              <Card className={classes.profileCard}>
-                <CardContent>
-                  <Avatar className={classes.avatar}>
-                    VY
-                  </Avatar>
-                </CardContent>
-                <CardContent>
-                  <Typography component="h1" className={classes.name}>
-                    veysi yıldız                  
-                  </Typography>
-                  <Typography component="p">
-                    FrontEndDeveloper
-                  </Typography>
-                  <SocialIcon url="http://facebook.com/biliyem" color="#ffffff" className={classes.socialIcon} />
-                  <SocialIcon url="http://twitter.com/veysiyildiz" color="#ffffff" className={classes.socialIcon} />
-                  <SocialIcon url="http://instagram.com/veysiy" color="#ffffff" className={classes.socialIcon} />
-                  <SocialIcon url="https://www.linkedin.com/in/veysiyildiz/" color="#ffffff" className={classes.socialIcon} />
+        <Grid container spacing={24} style={{maxWidth: '1150px', margin: '0 auto', width: '100%'}}>
+          <Grid item xs={12} md={3}>
+            <Paper className={classes.paperCenter}>
+              <Grid container spacing={24} >
+                <Grid item xs={12}>
+                  <Card className={classes.profileCard}>
+                    <CardContent>
+                      <Avatar className={classes.avatar}>
+                        <img src={avatar} alt='veysi yıldız' style={{ height: '100%' }} />
+                      </Avatar>
+                    </CardContent>
+                    <CardContent>
+                      <Typography component="h3" className={classes.name}>
+                        veysi yıldız                  
+                      </Typography>
+                      <Typography component="p">
+                        FrontEndDeveloper
+                      </Typography>
+                      <SocialIcon url="http://facebook.com/biliyem" color="#ffffff" className={classes.socialIcon} />
+                      <SocialIcon url="http://twitter.com/veysiyildiz" color="#ffffff" className={classes.socialIcon} />
+                      <SocialIcon url="http://instagram.com/veysiy" color="#ffffff" className={classes.socialIcon} />
+                      <SocialIcon url="https://www.linkedin.com/in/veysiyildiz/" color="#ffffff" className={classes.socialIcon} />
 
-                </CardContent>
-              </Card>
-              <Button variant="extendedFab" aria-label="download cv" className={classes.button}>
-                download cv
-              </Button>
+                    </CardContent>
+                  </Card>
+                  <Button variant="extendedFab" aria-label="download cv" className={classes.button}>
+                    download cv
+                  </Button>
+                </Grid>
+              </Grid>
             </Paper>
           </Grid>
-          <Grid item xs={12} sm={8}>
+          <Grid item xs={12} md={9}>
             <Grid container spacing={24} >
               <Grid item xs={12} >
                 <Paper className={classes.paper}>
-                  <Typography component="h1" className={classes.name}>
-                    about me
-                  </Typography>
-                  <Typography component="p">
-                    <ColorizeWords text='Experienced Frontend Developer with a demonstrated history of working in the marketing and advertising industry. Skilled in Javascript, User Experience, SEO, PHP, E-commerce, and WordPress. Focused on React, Redux, Webpack and Node.' />
-                  </Typography>
-                </Paper>
-              </Grid>
-              <Grid item xs={12} >
-                <Paper className={classes.paper}>
-                  <Typography component="h1" className={classes.name}>
-                    personal information
-                  </Typography>
-                  <p><ColorizeWords text='Marital Status: Married and have a child.' /></p>
-                  <p><ColorizeWords text='Military Service: Completed in 2006' /></p>
-                  <p><ColorizeWords text='Place & Date of Birth: Batman / Turkey – 03.08.1981' /></p>
-
-                </Paper>
-              </Grid>
-              <Grid item xs={12} >
-                <Paper className={classes.paper}>
-                  <Typography component="h1" className={classes.name}>
-                    professional skills
-                  </Typography>
-                  <VisibilitySensor
-                    partialVisibility 
-                    offset={{ bottom: 80 }}
-                    onChange={this.onVisibilitySensorChange}
-                  >
-                    <SkillsCloud 
-                      className='tag-cloud'
-                      rotate={null}
-                      style={{
-                        fontFamily: 'sans-serif',
-                        // fontSize: () => Math.round(Math.random() * 50) + 16,
-                        fontSize: 30,
-                        color: () => getRandomColor(),
-                        padding: 5,
-                        width: '100%',
-                        height: '600px',
-                      }}>
-                        {skills.map( (item) => ( 
-                          <div 
-                            key={item.name} 
-                            style={{
-                              fontSize: (item.knowledge*5),
-                              fontWeight: 'bold',
-                              opacity: (item.knowledge/10),
-                            }}
-                          >
-                            {item.name}
-                          </div>
-                        ))}
-                    </SkillsCloud>
-
-                  </VisibilitySensor>
-
-                </Paper>
-              </Grid>
-              <Grid item xs={12} >
-                <Paper className={classes.paperTimeline}>
-                  <Typography component="h2" className={classes.name}>
-                    work experience
-                  </Typography>
                   <Grid container spacing={24} >
                     <Grid item xs={12}>
+                      <Typography component="h1" className={classes.title}>
+                        about me
+                      </Typography>
+                      <p style={{marginLeft: '30px'}}>
+                        <ColorizeWords text='Experienced Frontend Developer with a demonstrated history of working in the marketing and advertising industry. Skilled in Javascript, User Experience, SEO, PHP, E-commerce, and WordPress. Focused on React, Redux, Webpack and Node.' />
+                      </p>
+                    </Grid>
+                  </Grid>
+                </Paper>
+              </Grid>
+              <Grid item xs={12} >
+                <Paper className={classes.paper}>
+                  <Grid container spacing={24} >
+                    <Grid item xs={12}>
+                      <Typography component="h1" className={classes.title}>
+                        personal information
+                      </Typography>
+                      <p style={{marginLeft: '30px'}}>
+                        <ColorizeWords text='Place & Date of Birth: Batman / Turkey – 03.08.1981' />
+                      </p>
+                    </Grid>
+                  </Grid>
+                </Paper>
+              </Grid>
+              <Grid item xs={12} >
+                <Paper className={classes.paper}>
+                  <Grid container spacing={24} >
+                    <Grid item xs={12}>
+                      <Typography component="h1" className={classes.title}>
+                        professional skills
+                      </Typography>
+                      <VisibilitySensor
+                        partialVisibility 
+                        offset={{ bottom: 80 }}
+                        onChange={this.onVisibilitySensorChange}
+                      >
+                        <SkillsCloud 
+                          className='tag-cloud'
+                          rotate={null}
+                          style={{
+                            fontFamily: 'sans-serif',
+                            // fontSize: () => Math.round(Math.random() * 50) + 16,
+                            fontSize: 30,
+                            color: () => getRandomColor(),
+                            padding: 5,
+                            width: '100%',
+                            height: '600px',
+                          }}>
+                            {skills.map( (item) => ( 
+                              <div 
+                                key={item.name} 
+                                style={{
+                                  fontSize: (item.knowledge*5),
+                                  fontWeight: 'bold',
+                                  opacity: (item.knowledge/10),
+                                }}
+                              >
+                                {item.name}
+                              </div>
+                            ))}
+                        </SkillsCloud>
+                      </VisibilitySensor>
+                    </Grid>
+                  </Grid>
+                </Paper>
+              </Grid>
+              <Grid item xs={12} >
+                <Paper className={classes.paper}>
+                  <Grid container spacing={24} >
+                    <Grid item xs={12}>
+                      <Typography component="h1" className={classes.title}>
+                        work experience
+                      </Typography>
                       <Timeline lineColor={'#ddd'}>
                         <TimelineItem
-                          date="11/2010 – Present"
-                          className=""
+                          dateText="11/2010 – Present"
                           bodyContainerStyle={{color: '#fff'}}
                           dateInnerStyle={{background: '#e86971'}}
                         >
-                          <h3>Overteam</h3>
+                          <h3>Overteam, Istanbul</h3>
                           <h4>Senior Front End Developer</h4>
                           <p>
                           ReactJs Front End Development  
@@ -216,16 +231,15 @@ class Index extends React.Component {
                           Samples  
                           http://www.yenirakiglobal.com adaptive desktop & mobile
                           </p>
-                          
                           <span className={classes.timelineDate}></span>
                         </TimelineItem>
                         <TimelineItem
-                          date="04/2009 – 11/2010"
+                          dateText="04/2009 – 11/2010"
                           className=""
                           bodyContainerStyle={{color: '#fff'}}
                           dateInnerStyle={{background: '#61b8ff'}}
                         >
-                          <h3>Madebycat</h3>
+                          <h3>Madebycat, Istanbul</h3>
                           <h4>Front End Developer</h4>
                           <p>
                           Project Planning.
@@ -234,37 +248,46 @@ class Index extends React.Component {
                           Deciding Information Architecture for clients, building websites. 
                           </p>
                           <p>
-                          Interface coding and CMS integration of new projects.	
+                          Front-end coding and CMS integration of new projects.	
+                          </p>
+                          <p>
+                          More HTML email templates.
                           </p>
                         </TimelineItem>
                         <TimelineItem
-                          date="11/2008 – 04/2009"
+                          dateText="11/2008 – 04/2009"
                           className=""
                           bodyContainerStyle={{color: '#fff'}}
                           dateInnerStyle={{background: '#f7d286'}}
                         >
-                          <h3>Madebycat</h3>
+                          <h3>Madebycat, Istanbul</h3>
                           <h4>Interface Coder</h4>
                           <p>
-                          Maintenance support for live projects
+                            Maintenance support for live projects
                           </p>
                           <p>
-                          Interface coding for live projects
+                            Created HTML e-mail templates for e-mail marketing.
                           </p>
                           <p>
-                          Building entire website frontend from scratch, theming, JS, browser bug fixing. 
+                            Tested front-end code in multiple browsers to ensure cross-browser compatability.
+                          </p>
+                          <p>
+                            Fixed front-end bugs (<ColorizeWords text='HTML, CSS, jQuery' />)
                           </p>
                         </TimelineItem>
                         <TimelineItem
-                          date="08/2008 – 11/2008"
+                          dateText="08/2008 – 11/2008"
                           className=""
                           bodyContainerStyle={{color: '#fff'}}
                           dateInnerStyle={{background: '#76bb7f'}}
                         >
-                          <h3>Madebycat</h3>
+                          <h3>Madebycat, Istanbul</h3>
                           <h4>Junior Interface Coder</h4>
                           <p>
-                            Content editing, HTML CSS bug fixing.
+                            Researched industry trends and websites to provide top quality design.
+                          </p>
+                          <p>
+                            Workflow tools included: <ColorizeWords text='HTML, CSS, Javascript' /> and <ColorizeWords text='SVN' />.
                           </p>
                         </TimelineItem>
                       </Timeline>
