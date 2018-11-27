@@ -14,38 +14,41 @@ body {
 	font-weight: normal;
 	font: 20px sans-serif;
 }
-.tag-cloud {
-	flex: 1;
+.timeline--wrapper{
+    padding: 0;
 }
-
-.tag-cloud > div {
-	transition: 1.4s;
+.timeline {
+    margin: 50px auto 0;
+    color: #61b8ff;
 }
-
-.tag-item-wrapper {
-	cursor: pointer;
+.entry .title:before {
+    border: 3px solid;
+    background-color: #61b8ff;
+    top: 0;
+    right: -4px;
+    width: 4px;
+    height: 4px;
 }
-
-.tag-item-wrapper:hover {
-	z-index: 100;
+.timeline:before {
+    border: 1px solid;
+    top: 25px;
 }
-
-.tag-item-wrapper:hover .tag-item-tooltip {
-	display: block;
+.timeline-item-date {
+    background: #a2a2a2;
+    height: 32px;
 }
-
-.tag-item-tooltip {
-	background: #c01916;
-	color: white;
-	margin-top: 5px;
-    z-index: 100;
-    display: none;
-	padding: 15px;
-	font-size: 14px;
-	line-height: 1;
-	position: absolute;
-	min-width: 60px;
-	left: 50%;
-	transform: translateX(-50%);
-    text-align: center;
+.timeline-item-dateinner {
+    height: 30px;
+    line-height: 32px;
+}
+@media only screen and (max-width: 768px) {
+    .entry .title {
+        width: 90%;
+    }
+    .entry .title:before {
+        left: 6px;
+    }
+    .timeline-item-date {
+        top: 0px;
+    }
 }
