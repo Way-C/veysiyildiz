@@ -20,7 +20,7 @@ import avatar from '../veysi.jpg'
 import { withStyles } from '@material-ui/core/styles';
 import withRoot from '../withRoot';
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     margin: '0',
     background: '#2a2c2e',
@@ -39,6 +39,10 @@ const styles = theme => ({
     background: '#303337',
     padding: '40px'
   },
+  paperTimeline: {
+    background: '#303337',
+    padding: '40px 40px 0 40px'
+  },
   paperCenter: {
     background: '#303337',
     textAlign: 'center',
@@ -53,9 +57,17 @@ const styles = theme => ({
   },
   name: {
     fontSize: '31px',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '20px',
+    },
+
   },
   title: {
     fontSize: '50px',
+    lineHeight: 1,
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '32px',
+    },
   },
   socialIcon: {
     marginTop: '12px',
@@ -97,7 +109,7 @@ class Index extends React.Component {
     return (
       <div className={classes.root}>
         <Grid container spacing={24} style={{maxWidth: '1150px', margin: '0 auto', width: '100%'}}>
-          <Grid item xs={12} md={3}>
+          <Grid item xs={12} sm={12} md={3}>
             <Paper className={classes.paperCenter}>
               <Grid container spacing={24} >
                 <Grid item xs={12}>
@@ -114,10 +126,10 @@ class Index extends React.Component {
                       <Typography component="p">
                         FrontEndDeveloper
                       </Typography>
-                      <SocialIcon url="http://facebook.com/biliyem" color="#ffffff" className={classes.socialIcon} />
-                      <SocialIcon url="http://twitter.com/veysiyildiz" color="#ffffff" className={classes.socialIcon} />
-                      <SocialIcon url="http://instagram.com/veysiy" color="#ffffff" className={classes.socialIcon} />
                       <SocialIcon url="https://www.linkedin.com/in/veysiyildiz/" color="#ffffff" className={classes.socialIcon} />
+                      <SocialIcon url="http://instagram.com/veysiy" color="#ffffff" className={classes.socialIcon} />
+                      <SocialIcon url="http://twitter.com/veysiyildiz" color="#ffffff" className={classes.socialIcon} />
+                      <SocialIcon url="http://facebook.com/biliyem" color="#ffffff" className={classes.socialIcon} />
 
                     </CardContent>
                   </Card>
@@ -128,7 +140,7 @@ class Index extends React.Component {
               </Grid>
             </Paper>
           </Grid>
-          <Grid item xs={12} md={9}>
+          <Grid item xs={12} sm={12} md={9}>
             <Grid container spacing={24} >
               <Grid item xs={12} >
                 <Paper className={classes.paper}>
@@ -138,7 +150,7 @@ class Index extends React.Component {
                         about me
                       </Typography>
                       <p style={{marginLeft: '30px'}}>
-                        <ColorizeWords text='Experienced Frontend Developer with a demonstrated history of working in the marketing and advertising industry. Skilled in Javascript, User Experience, SEO, PHP, E-commerce, and WordPress. Focused on React, Redux, Webpack and Node.' />
+                        <ColorizeWords text='Experienced Frontend Developer with a demonstrated history of working in the marketing and advertising industry. Skilled in Javascript, User Experience, SEO, PHP, E-commerce, and WordPress. Focused on React, Redux, Webpack and Node.'  seperator='.' />
                       </p>
                     </Grid>
                   </Grid>
@@ -149,10 +161,13 @@ class Index extends React.Component {
                   <Grid container spacing={24} >
                     <Grid item xs={12}>
                       <Typography component="h1" className={classes.title}>
-                        personal information
+                        languages
                       </Typography>
                       <p style={{marginLeft: '30px'}}>
-                        <ColorizeWords text='Place & Date of Birth: Batman / Turkey – 03.08.1981' />
+                        <ColorizeWords text='Turkish, Kurdish - Native' />
+                      </p>
+                      <p style={{marginLeft: '30px'}}>
+                        <ColorizeWords text='English - Advanced' />
                       </p>
                     </Grid>
                   </Grid>
@@ -201,20 +216,20 @@ class Index extends React.Component {
                 </Paper>
               </Grid>
               <Grid item xs={12} >
-                <Paper className={classes.paper}>
-                  <Grid container spacing={24} >
+                <Paper className={classes.paperTimeline}>
+                  <Grid container spacing={0} >
                     <Grid item xs={12}>
                       <Typography component="h1" className={classes.title}>
                         work experience
                       </Typography>
-                      <Timeline lineColor={'#ddd'}>
+                      <Timeline lineColor={'#61b8ff'} >
                         <TimelineItem
                           dateText="11/2010 – Present"
                           bodyContainerStyle={{color: '#fff'}}
                           dateInnerStyle={{background: '#e86971'}}
                         >
-                          <h3>Overteam, Istanbul</h3>
-                          <h4>Senior Front End Developer</h4>
+                          <h3 style={{color: '#e86971'}}>Overteam, Istanbul</h3>
+                          <h4 style={{color: '#e86971'}}>Senior Front End Developer</h4>
                           <p>
                           ReactJs Front End Development  
                           Samples  
@@ -239,8 +254,8 @@ class Index extends React.Component {
                           bodyContainerStyle={{color: '#fff'}}
                           dateInnerStyle={{background: '#61b8ff'}}
                         >
-                          <h3>Madebycat, Istanbul</h3>
-                          <h4>Front End Developer</h4>
+                          <h3 style={{color: '#61b8ff'}}>Madebycat, Istanbul</h3>
+                          <h4 style={{color: '#61b8ff'}}>Front End Developer</h4>
                           <p>
                           Project Planning.
                           </p>
@@ -258,10 +273,10 @@ class Index extends React.Component {
                           dateText="11/2008 – 04/2009"
                           className=""
                           bodyContainerStyle={{color: '#fff'}}
-                          dateInnerStyle={{background: '#f7d286'}}
+                          dateInnerStyle={{background: '#f7d286', color: '#333'}}
                         >
-                          <h3>Madebycat, Istanbul</h3>
-                          <h4>Interface Coder</h4>
+                          <h3 style={{color: '#f7d286'}}>Madebycat, Istanbul</h3>
+                          <h4 style={{color: '#f7d286'}}>Interface Coder</h4>
                           <p>
                             Maintenance support for live projects
                           </p>
@@ -281,8 +296,8 @@ class Index extends React.Component {
                           bodyContainerStyle={{color: '#fff'}}
                           dateInnerStyle={{background: '#76bb7f'}}
                         >
-                          <h3>Madebycat, Istanbul</h3>
-                          <h4>Junior Interface Coder</h4>
+                          <h3 style={{color: '#76bb7f'}}>Madebycat, Istanbul</h3>
+                          <h4 style={{color: '#76bb7f'}}>Junior Interface Coder</h4>
                           <p>
                             Researched industry trends and websites to provide top quality design.
                           </p>
@@ -291,6 +306,41 @@ class Index extends React.Component {
                           </p>
                         </TimelineItem>
                       </Timeline>
+                    </Grid>
+                  </Grid>
+                </Paper>
+              </Grid>
+                <Grid item xs={12} >
+                  <Paper className={classes.paper}>
+                    <Grid container spacing={24} >
+                      <Grid item xs={12}>
+                        <Typography component="h1" className={classes.title}>
+                          projects
+                        </Typography>
+                        <p>
+                          <a href="https://meyhanedeyiz.biz" target="_blank" rel="noreferrer" style={{textDecoration:'none'}}>
+                            <ColorizeWords text='https://meyhanedeyiz.biz' /><br />
+                            <ColorizeWords text='ReactJs, Redux, Redux Saga, Webpack, Node, Es6' seperator=',' />
+                          </a>
+                        </p>
+                        <p>
+                          <a href="http://www.arcelikas.com" target="_blank" rel="noreferrer" style={{textDecoration:'none'}}>
+                            <ColorizeWords text='http://www.arcelikas.com' /><br />
+                            <ColorizeWords text='.Net Project frontend implementation' seperator=',' />
+                          </a>
+                        </p>
+                        <p>
+                          <a href="http://howtoistanbul.com" target="_blank" rel="noreferrer" style={{textDecoration:'none'}}>
+                            <ColorizeWords text='http://howtoistanbul.com' /><br />
+                            <ColorizeWords text='WordPress, PHP Symfony 1.4' seperator=',' />
+                          </a>
+                        </p>
+                        <p>
+                          <a href="https://www.yenirakiglobal.com" target="_blank" rel="noreferrer" style={{textDecoration:'none'}}>
+                            <ColorizeWords text='https://www.yenirakiglobal.com' /><br />
+                            <ColorizeWords text='WordPress, adaptive' seperator=',' />
+                          </a>
+                        </p>
                     </Grid>
                   </Grid>
                 </Paper>
