@@ -42,6 +42,9 @@ body {
     line-height: 32px;
 }
 @media only screen and (max-width: 768px) {
+    body {
+        font: 16px sans-serif;
+    }    
     .entry .title {
         width: 90%;
     }

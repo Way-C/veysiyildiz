@@ -38,11 +38,17 @@ const styles = (theme) => ({
   },
   paper: {
     background: '#303337',
-    padding: '40px'
+    padding: '40px',
+    [theme.breakpoints.down('xs')]: {
+      padding: '12px',
+    },
   },
   paperTimeline: {
     background: '#303337',
-    padding: '40px 40px 0 40px'
+    padding: '40px 40px 0 40px',
+    [theme.breakpoints.down('xs')]: {
+      padding: '12px 12px 0 12px',
+    },
   },
   paperCenter: {
     background: '#303337',
@@ -87,6 +93,12 @@ const styles = (theme) => ({
   },
   resetContainer: {
     padding: theme.spacing.unit * 3,
+  },
+  leftMarg: {
+    marginLeft: '30px',
+    [theme.breakpoints.down('xs')]: {
+      marginLeft: '0px',
+    },
   },
 });
 
@@ -150,7 +162,7 @@ class Index extends React.Component {
                       <Typography component="h1" className={classes.title}>
                         about me
                       </Typography>
-                      <p style={{marginLeft: '30px'}}>
+                      <p className={classes.leftMarg}>
                         <ColorizeWords text='Experienced Frontend Developer with a demonstrated history of working in the marketing and advertising industry. Skilled in Javascript, User Experience, SEO, PHP, E-commerce, and WordPress. Focused on React, Redux, Webpack and Node' seperator='.' />
                       </p>
                     </Grid>
@@ -300,37 +312,37 @@ class Index extends React.Component {
                         <Typography component="h1" className={classes.title}>
                           projects & developments
                         </Typography>
-                        <p style={{marginLeft: '30px'}}>
+                        <p className={classes.leftMarg}>
                           <a href="https://www.npmjs.com/package/d3-tagcloud-for-react" target="_blank" rel="noreferrer" style={{textDecoration:'none'}}>
                             <span style={{color: getRandomColor()}}>d3 tagcloud for react</span><br />
                             <span style={{color: getRandomColor()}}>Another tag cloud for react with two variable fontSize and opacity, using the wonderful d3-cloud under the hood.</span>
                           </a>
                         </p>
-                        <p style={{marginLeft: '30px'}}>
+                        <p className={classes.leftMarg}>
                           <a href="https://www.npmjs.com/package/vertical-timeline-component-for-react" target="_blank" rel="noreferrer" style={{textDecoration:'none'}}>
                             <span style={{color: getRandomColor()}}>Vertical Timeline Component For React</span><br />
                             <span style={{color: getRandomColor()}}>A react component to generate responsive vertical timeline.</span>
                           </a>
                         </p>
-                        <p style={{marginLeft: '30px'}}>
+                        <p className={classes.leftMarg}>
                           <a href="https://meyhanedeyiz.biz" target="_blank" rel="noreferrer" style={{textDecoration:'none'}}>
                             <span style={{color: getRandomColor()}}>https://meyhanedeyiz.biz</span><br />
                             <ColorizeWords text='ReactJs, Redux, Redux Saga, Webpack, Node, Es6' seperator=',' />
                           </a>
                         </p>
-                        <p style={{marginLeft: '30px'}}>
+                        <p className={classes.leftMarg}>
                           <a href="http://www.arcelikas.com" target="_blank" rel="noreferrer" style={{textDecoration:'none'}}>
                             <span style={{color: getRandomColor()}}>http://www.arcelikas.com</span><br />
                             <span style={{color: getRandomColor()}}>.Net Project frontend implementation</span>
                           </a>
                         </p>
-                        <p style={{marginLeft: '30px'}}>
+                        <p className={classes.leftMarg}>
                           <a href="http://howtoistanbul.com" target="_blank" rel="noreferrer" style={{textDecoration:'none'}}>
                             <span style={{color: getRandomColor()}}>http://howtoistanbul.com</span><br />
                             <ColorizeWords text='WordPress, PHP Symfony 1.4' seperator=',' />
                           </a>
                         </p>
-                        <p style={{marginLeft: '30px'}}>
+                        <p className={classes.leftMarg}>
                           <a href="https://www.yenirakiglobal.com" target="_blank" rel="noreferrer" style={{textDecoration:'none'}}>
                             <span style={{color: getRandomColor()}}>https://www.yenirakiglobal.com</span><br />
                             <ColorizeWords text='Fullstack WordPress' seperator=',' />
@@ -347,10 +359,10 @@ class Index extends React.Component {
                       <Typography component="h1" className={classes.title}>
                         languages
                       </Typography>
-                      <p style={{marginLeft: '30px'}}>
+                      <p className={classes.leftMarg}>
                         <ColorizeWords text='Turkish, Kurdish - Native' />
                       </p>
-                      <p style={{marginLeft: '30px'}}>
+                      <p className={classes.leftMarg}>
                         <ColorizeWords text='English - Advanced' />
                       </p>
                     </Grid>
@@ -364,7 +376,7 @@ class Index extends React.Component {
                       <Typography component="h1" className={classes.title}>
                         interests
                       </Typography>
-                      <p style={{marginLeft: '30px'}}>
+                      <p className={classes.leftMarg}>
                         <ColorizeWords text='music, photography, video, trips, learning' />
                       </p>
                     </Grid>
