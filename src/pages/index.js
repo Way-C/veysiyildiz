@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 import React from 'react';
 import PropTypes from 'prop-types';
 import VisibilitySensor from 'react-visibility-sensor';
@@ -12,7 +13,7 @@ import Button from '@material-ui/core/Button';
 
 import { SocialIcon } from 'react-social-icons';
 import { Timeline, TimelineItem }  from 'vertical-timeline-component-for-react';
-import SkillsCloud from '../components/SkillsCloud';
+import TagCloud, {renderData} from 'd3-tagcloud-for-react';
 import ColorizeWords from '../components/ColorizeWords';
 import data, { getRandomColor } from '../data';
 import avatar from '../veysi.jpg'
@@ -104,7 +105,7 @@ class Index extends React.Component {
 
   render() {
     const { classes } = this.props;
-    const { skills } = data;
+    const { skills, colors } = data;
 
     return (
       <div className={classes.root}>
@@ -133,9 +134,9 @@ class Index extends React.Component {
 
                     </CardContent>
                   </Card>
-                  <Button variant="extendedFab" aria-label="download cv" className={classes.button}>
+                  {/* <Button variant="extendedFab" aria-label="download cv" className={classes.button}>
                     download cv
-                  </Button>
+                  </Button> */}
                 </Grid>
               </Grid>
             </Paper>
@@ -150,8 +151,191 @@ class Index extends React.Component {
                         about me
                       </Typography>
                       <p style={{marginLeft: '30px'}}>
-                        <ColorizeWords text='Experienced Frontend Developer with a demonstrated history of working in the marketing and advertising industry. Skilled in Javascript, User Experience, SEO, PHP, E-commerce, and WordPress. Focused on React, Redux, Webpack and Node.'  seperator='.' />
+                        <ColorizeWords text='Experienced Frontend Developer with a demonstrated history of working in the marketing and advertising industry. Skilled in Javascript, User Experience, SEO, PHP, E-commerce, and WordPress. Focused on React, Redux, Webpack and Node' seperator='.' />
                       </p>
+                    </Grid>
+                  </Grid>
+                </Paper>
+              </Grid>
+              <Grid item xs={12} >
+                <Paper className={classes.paper}>
+                  <Grid container spacing={24} >
+                    <Grid item xs={12}>
+                      <Typography component="h1" className={classes.title}>
+                        professional skills
+                      </Typography>
+                      <VisibilitySensor
+                        partialVisibility 
+                        offset={{ bottom: 80 }}
+                        onChange={this.onVisibilitySensorChange}
+                      >
+                        <TagCloud 
+                          className='tag-cloud'
+                          rotate={null}
+                          data={skills}
+                          colorarray={colors}
+                          style={{
+                            fontFamily: 'sans-serif',
+                            fontSize: 30,
+                            padding: 5,
+                            width: '100%',
+                            height: '600px',
+                          }}>
+                            {renderData(skills)}
+                        </TagCloud>
+                      </VisibilitySensor>
+                    </Grid>
+                  </Grid>
+                </Paper>
+              </Grid>
+              <Grid item xs={12} >
+                <Paper className={classes.paperTimeline}>
+                  <Grid container spacing={0} >
+                    <Grid item xs={12}>
+                      <Typography component="h1" className={classes.title}>
+                        work experience & education
+                      </Typography>
+                      <Timeline lineColor={'#61b8ff'} >
+                        <TimelineItem
+                          dateText="11/2010 – Now"
+                          bodyContainerStyle={{color: '#fff'}}
+                          dateInnerStyle={{background: '#61b8ff'}}
+                        >
+                          <h3 style={{color: '#61b8ff'}}>Overteam, Istanbul</h3>
+                          <h4 style={{color: '#61b8ff'}}>Senior Front End Developer</h4>
+                          <p>
+                            <span style={{color: getRandomColor()}}>Mentored and trained 4 junior front-end developer in 8 years.</span>
+                          </p>
+                          <p>
+                            <span style={{color: getRandomColor()}}>Responsible for all aspects of frontend architecture and development, including business focussed trade-offs around technology, features, quality and test strategy.</span></p>
+                          <p>
+                            <span style={{color: getRandomColor()}}>Worked with the team of architects and back-end Developers to gather requirements and enhance the application functionality and add new features.</span>
+                          </p>
+                          <p>
+                            <span style={{color: getRandomColor()}}>Developed the UI, layout and front-end programming for the web applications using HTML, CSS, jQuery and JavaScript that matches requirements.</span>
+                          </p>
+                          <p>
+                            <span style={{color: getRandomColor()}}>Responsible for all client side UI Validation, custom validations and implementing Business logic based on user selection using JQuery UI and ReactJS.</span>
+                          </p>
+                          <p>
+                            <span style={{color: getRandomColor()}}>Involved in developing the responsive web pages for mobile, tablet and desktop using CSS3 Media queries.</span>
+                          </p>
+                          <span className={classes.timelineDate}></span>
+                        </TimelineItem>
+                        <TimelineItem
+                          dateText="04/2009 – 11/2010"
+                          className=""
+                          bodyContainerStyle={{color: '#fff'}}
+                          dateInnerStyle={{background: '#8c5fc4'}}
+                        >
+                          <h3 style={{color: '#8c5fc4'}}>Madebycat, Istanbul</h3>
+                          <h4 style={{color: '#8c5fc4'}}>Front End Developer</h4>
+                          <p>
+                          <span style={{color: getRandomColor()}}>Deciding Information Architecture for clients, building websites.</span>
+                          </p>
+                          <p>
+                          <span style={{color: getRandomColor()}}>Front-end coding and CMS integration of new projects.</span>
+                          </p>
+                          <p>
+                          <span style={{color: getRandomColor()}}>More HTML email templates.</span>
+                          </p>
+                        </TimelineItem>
+                        <TimelineItem
+                          dateText="11/2008 – 04/2009"
+                          className=""
+                          bodyContainerStyle={{color: '#fff'}}
+                          dateInnerStyle={{background: '#f7d286', color: '#333'}}
+                        >
+                          <h3 style={{color: '#f7d286'}}>Madebycat, Istanbul</h3>
+                          <h4 style={{color: '#f7d286'}}>Interface Coder</h4>
+                          <p>
+                            <span style={{color: getRandomColor()}}>Maintenance support for live projects</span>
+                          </p>
+                          <p>
+                            <span style={{color: getRandomColor()}}>Created HTML e-mail templates for e-mail marketing.</span>
+                          </p>
+                          <p>
+                            <span style={{color: getRandomColor()}}>Tested front-end code in multiple browsers to ensure cross-browser compatability.</span>
+                          </p>
+                          <p>
+                            Fixed front-end bugs (<ColorizeWords text='HTML, CSS, jQuery' />)
+                          </p>
+                        </TimelineItem>
+                        <TimelineItem
+                          dateText="08/2008 – 11/2008"
+                          className=""
+                          bodyContainerStyle={{color: '#fff'}}
+                          dateInnerStyle={{background: '#76bb7f'}}
+                        >
+                          <h3 style={{color: '#76bb7f'}}>Madebycat, Istanbul</h3>
+                          <h4 style={{color: '#76bb7f'}}>Junior Interface Coder</h4>
+                          <p>
+                            <span style={{color: getRandomColor()}}>Researched industry trends and websites to provide top quality design.</span>
+                          </p>
+                          <p>
+                            Workflow tools included: <ColorizeWords text='HTML, CSS, Javascript' /> and <ColorizeWords text='SVN' />.
+                          </p>
+                        </TimelineItem>
+                        <TimelineItem
+                          dateText="1999 - 2004"
+                          className=""
+                          bodyContainerStyle={{color: '#fff'}}
+                          dateInnerStyle={{background: '#e86971'}}
+                        >
+                          <h3 style={{color: '#e86971'}}>Abant İzzet Baysal University</h3>
+                          <h4 style={{color: '#e86971'}}>Physics Bachelor's degree</h4>
+                          <p>
+                            Took <span style={{color: getRandomColor()}}>java</span> and <span style={{color: getRandomColor()}}>html</span> classes as optional lessons.
+                          </p>
+                        </TimelineItem>
+                      </Timeline>
+                    </Grid>
+                  </Grid>
+                </Paper>
+              </Grid>
+                <Grid item xs={12} >
+                  <Paper className={classes.paper}>
+                    <Grid container spacing={24} >
+                      <Grid item xs={12}>
+                        <Typography component="h1" className={classes.title}>
+                          projects & developments
+                        </Typography>
+                        <p style={{marginLeft: '30px'}}>
+                          <a href="https://www.npmjs.com/package/d3-tagcloud-for-react" target="_blank" rel="noreferrer" style={{textDecoration:'none'}}>
+                            <span style={{color: getRandomColor()}}>d3 tagcloud for react</span><br />
+                            <span style={{color: getRandomColor()}}>Another tag cloud for react with two variable fontSize and opacity, using the wonderful d3-cloud under the hood.</span>
+                          </a>
+                        </p>
+                        <p style={{marginLeft: '30px'}}>
+                          <a href="https://www.npmjs.com/package/vertical-timeline-component-for-react" target="_blank" rel="noreferrer" style={{textDecoration:'none'}}>
+                            <span style={{color: getRandomColor()}}>Vertical Timeline Component For React</span><br />
+                            <span style={{color: getRandomColor()}}>A react component to generate responsive vertical timeline.</span>
+                          </a>
+                        </p>
+                        <p style={{marginLeft: '30px'}}>
+                          <a href="https://meyhanedeyiz.biz" target="_blank" rel="noreferrer" style={{textDecoration:'none'}}>
+                            <span style={{color: getRandomColor()}}>https://meyhanedeyiz.biz</span><br />
+                            <ColorizeWords text='ReactJs, Redux, Redux Saga, Webpack, Node, Es6' seperator=',' />
+                          </a>
+                        </p>
+                        <p style={{marginLeft: '30px'}}>
+                          <a href="http://www.arcelikas.com" target="_blank" rel="noreferrer" style={{textDecoration:'none'}}>
+                            <span style={{color: getRandomColor()}}>http://www.arcelikas.com</span><br />
+                            <span style={{color: getRandomColor()}}>.Net Project frontend implementation</span>
+                          </a>
+                        </p>
+                        <p style={{marginLeft: '30px'}}>
+                          <a href="http://howtoistanbul.com" target="_blank" rel="noreferrer" style={{textDecoration:'none'}}>
+                            <span style={{color: getRandomColor()}}>http://howtoistanbul.com</span><br />
+                            <ColorizeWords text='WordPress, PHP Symfony 1.4' seperator=',' />
+                          </a>
+                        </p>
+                        <p style={{marginLeft: '30px'}}>
+                          <a href="https://www.yenirakiglobal.com" target="_blank" rel="noreferrer" style={{textDecoration:'none'}}>
+                            <span style={{color: getRandomColor()}}>https://www.yenirakiglobal.com</span><br />
+                            <ColorizeWords text='Fullstack WordPress' seperator=',' />
+                          </a>
+                        </p>
                     </Grid>
                   </Grid>
                 </Paper>
@@ -178,173 +362,16 @@ class Index extends React.Component {
                   <Grid container spacing={24} >
                     <Grid item xs={12}>
                       <Typography component="h1" className={classes.title}>
-                        professional skills
+                        interests
                       </Typography>
-                      <VisibilitySensor
-                        partialVisibility 
-                        offset={{ bottom: 80 }}
-                        onChange={this.onVisibilitySensorChange}
-                      >
-                        <SkillsCloud 
-                          className='tag-cloud'
-                          rotate={null}
-                          style={{
-                            fontFamily: 'sans-serif',
-                            // fontSize: () => Math.round(Math.random() * 50) + 16,
-                            fontSize: 30,
-                            color: () => getRandomColor(),
-                            padding: 5,
-                            width: '100%',
-                            height: '600px',
-                          }}>
-                            {skills.map( (item) => ( 
-                              <div 
-                                key={item.name} 
-                                style={{
-                                  fontSize: (item.knowledge*5),
-                                  fontWeight: 'bold',
-                                  opacity: (item.knowledge/10),
-                                }}
-                              >
-                                {item.name}
-                              </div>
-                            ))}
-                        </SkillsCloud>
-                      </VisibilitySensor>
+                      <p style={{marginLeft: '30px'}}>
+                        <ColorizeWords text='music, photography, video, trips, learning' />
+                      </p>
                     </Grid>
                   </Grid>
                 </Paper>
               </Grid>
-              <Grid item xs={12} >
-                <Paper className={classes.paperTimeline}>
-                  <Grid container spacing={0} >
-                    <Grid item xs={12}>
-                      <Typography component="h1" className={classes.title}>
-                        work experience
-                      </Typography>
-                      <Timeline lineColor={'#61b8ff'} >
-                        <TimelineItem
-                          dateText="11/2010 – Present"
-                          bodyContainerStyle={{color: '#fff'}}
-                          dateInnerStyle={{background: '#e86971'}}
-                        >
-                          <h3 style={{color: '#e86971'}}>Overteam, Istanbul</h3>
-                          <h4 style={{color: '#e86971'}}>Senior Front End Developer</h4>
-                          <p>
-                          ReactJs Front End Development  
-                          Samples  
-                          https://meyhanedeyiz.biz ReactJs, Redux, Redux Saga, Webpack, Node, Es6
-                          </p>
-                          <p>
-                          Front end development and implementation on CMS 
-                          Sample
-                          http://www.arcelikas.com/   .Net Project frontend implementation
-                          http://howtoistanbul.com  WordPress and PHP Symfony 1.4 hybrid 
-                          </p>
-                          <p>
-                          Wordpress full stack development 
-                          Samples  
-                          http://www.yenirakiglobal.com adaptive desktop & mobile
-                          </p>
-                          <span className={classes.timelineDate}></span>
-                        </TimelineItem>
-                        <TimelineItem
-                          dateText="04/2009 – 11/2010"
-                          className=""
-                          bodyContainerStyle={{color: '#fff'}}
-                          dateInnerStyle={{background: '#61b8ff'}}
-                        >
-                          <h3 style={{color: '#61b8ff'}}>Madebycat, Istanbul</h3>
-                          <h4 style={{color: '#61b8ff'}}>Front End Developer</h4>
-                          <p>
-                          Project Planning.
-                          </p>
-                          <p>
-                          Deciding Information Architecture for clients, building websites. 
-                          </p>
-                          <p>
-                          Front-end coding and CMS integration of new projects.	
-                          </p>
-                          <p>
-                          More HTML email templates.
-                          </p>
-                        </TimelineItem>
-                        <TimelineItem
-                          dateText="11/2008 – 04/2009"
-                          className=""
-                          bodyContainerStyle={{color: '#fff'}}
-                          dateInnerStyle={{background: '#f7d286', color: '#333'}}
-                        >
-                          <h3 style={{color: '#f7d286'}}>Madebycat, Istanbul</h3>
-                          <h4 style={{color: '#f7d286'}}>Interface Coder</h4>
-                          <p>
-                            Maintenance support for live projects
-                          </p>
-                          <p>
-                            Created HTML e-mail templates for e-mail marketing.
-                          </p>
-                          <p>
-                            Tested front-end code in multiple browsers to ensure cross-browser compatability.
-                          </p>
-                          <p>
-                            Fixed front-end bugs (<ColorizeWords text='HTML, CSS, jQuery' />)
-                          </p>
-                        </TimelineItem>
-                        <TimelineItem
-                          dateText="08/2008 – 11/2008"
-                          className=""
-                          bodyContainerStyle={{color: '#fff'}}
-                          dateInnerStyle={{background: '#76bb7f'}}
-                        >
-                          <h3 style={{color: '#76bb7f'}}>Madebycat, Istanbul</h3>
-                          <h4 style={{color: '#76bb7f'}}>Junior Interface Coder</h4>
-                          <p>
-                            Researched industry trends and websites to provide top quality design.
-                          </p>
-                          <p>
-                            Workflow tools included: <ColorizeWords text='HTML, CSS, Javascript' /> and <ColorizeWords text='SVN' />.
-                          </p>
-                        </TimelineItem>
-                      </Timeline>
-                    </Grid>
-                  </Grid>
-                </Paper>
-              </Grid>
-                <Grid item xs={12} >
-                  <Paper className={classes.paper}>
-                    <Grid container spacing={24} >
-                      <Grid item xs={12}>
-                        <Typography component="h1" className={classes.title}>
-                          projects
-                        </Typography>
-                        <p>
-                          <a href="https://meyhanedeyiz.biz" target="_blank" rel="noreferrer" style={{textDecoration:'none'}}>
-                            <ColorizeWords text='https://meyhanedeyiz.biz' /><br />
-                            <ColorizeWords text='ReactJs, Redux, Redux Saga, Webpack, Node, Es6' seperator=',' />
-                          </a>
-                        </p>
-                        <p>
-                          <a href="http://www.arcelikas.com" target="_blank" rel="noreferrer" style={{textDecoration:'none'}}>
-                            <ColorizeWords text='http://www.arcelikas.com' /><br />
-                            <ColorizeWords text='.Net Project frontend implementation' seperator=',' />
-                          </a>
-                        </p>
-                        <p>
-                          <a href="http://howtoistanbul.com" target="_blank" rel="noreferrer" style={{textDecoration:'none'}}>
-                            <ColorizeWords text='http://howtoistanbul.com' /><br />
-                            <ColorizeWords text='WordPress, PHP Symfony 1.4' seperator=',' />
-                          </a>
-                        </p>
-                        <p>
-                          <a href="https://www.yenirakiglobal.com" target="_blank" rel="noreferrer" style={{textDecoration:'none'}}>
-                            <ColorizeWords text='https://www.yenirakiglobal.com' /><br />
-                            <ColorizeWords text='WordPress, adaptive' seperator=',' />
-                          </a>
-                        </p>
-                    </Grid>
-                  </Grid>
-                </Paper>
-              </Grid>
+
             </Grid>
           </Grid>
         </Grid>
