@@ -17,7 +17,7 @@ import TagCloud, {renderData} from 'd3-tagcloud-for-react';
 import ColorizeWords from '../components/ColorizeWords';
 import data, { getRandomColor } from '../data';
 import avatar from '../veysi.jpg'
-
+import cvpdf from '../veysiyildiz.pdf'
 import { withStyles } from '@material-ui/core/styles';
 import withRoot from '../withRoot';
 
@@ -137,18 +137,18 @@ class Index extends React.Component {
                         veysi yıldız                  
                       </Typography>
                       <Typography component="p">
-                        FrontEndDeveloper
+                        Front-End Developer
                       </Typography>
+                      <SocialIcon url="https://github.com/veysiyildiz" color="#ffffff" className={classes.socialIcon} />
                       <SocialIcon url="https://www.linkedin.com/in/veysiyildiz/" color="#ffffff" className={classes.socialIcon} />
                       <SocialIcon url="http://instagram.com/veysiy" color="#ffffff" className={classes.socialIcon} />
-                      <SocialIcon url="http://twitter.com/veysiyildiz" color="#ffffff" className={classes.socialIcon} />
                       <SocialIcon url="http://facebook.com/biliyem" color="#ffffff" className={classes.socialIcon} />
 
                     </CardContent>
                   </Card>
-                  {/* <Button variant="extendedFab" aria-label="download cv" className={classes.button}>
+                  <Button variant="extendedFab" href={cvpdf} aria-label="download cv" component="a" className={classes.button}>
                     download cv
-                  </Button> */}
+                  </Button>
                 </Grid>
               </Grid>
             </Paper>
@@ -163,7 +163,7 @@ class Index extends React.Component {
                         about me
                       </Typography>
                       <p className={classes.leftMarg}>
-                        <ColorizeWords text='Experienced Frontend Developer with a demonstrated history of working in the marketing and advertising industry. Skilled in Javascript, User Experience, SEO, PHP, E-commerce, and WordPress. Focused on React, Redux, Webpack and Node' seperator='.' />
+                        <ColorizeWords text='Experienced Front-End Developer with a demonstrated history of working in the marketing and advertising industry. Skilled in Javascript, User Experience, SEO, PHP, E-commerce, and WordPress. Focused on React, Redux, Webpack and Node' seperator='.' />
                       </p>
                     </Grid>
                   </Grid>
@@ -214,17 +214,17 @@ class Index extends React.Component {
                           dateInnerStyle={{background: '#61b8ff'}}
                         >
                           <h3 style={{color: '#61b8ff'}}>Overteam, Istanbul</h3>
-                          <h4 style={{color: '#61b8ff'}}>Senior Front End Developer</h4>
+                          <h4 style={{color: '#61b8ff'}}>Senior Front-End Developer</h4>
                           <p>
-                            <span style={{color: getRandomColor()}}>Mentored and trained 4 junior front-end developer in 8 years.</span>
+                            <span style={{color: getRandomColor()}}>Mentored and trained 4 junior Front-End Developers in 8 years.</span>
                           </p>
                           <p>
                             <span style={{color: getRandomColor()}}>Responsible for all aspects of frontend architecture and development, including business focussed trade-offs around technology, features, quality and test strategy.</span></p>
                           <p>
-                            <span style={{color: getRandomColor()}}>Worked with the team of architects and back-end Developers to gather requirements and enhance the application functionality and add new features.</span>
+                            <span style={{color: getRandomColor()}}>Worked with the team of Designers and Back-End Developers to gather requirements and enhance the project’s functionality and add new features.</span>
                           </p>
                           <p>
-                            <span style={{color: getRandomColor()}}>Developed the UI, layout and front-end programming for the web applications using HTML, CSS, jQuery and JavaScript that matches requirements.</span>
+                            <span style={{color: getRandomColor()}}>Developed the UI, layout and Front-End programming for the web applications using HTML, CSS, jQuery and JavaScript that matches requirements.</span>
                           </p>
                           <p>
                             <span style={{color: getRandomColor()}}>Responsible for all client side UI Validation, custom validations and implementing Business logic based on user selection using JQuery UI and ReactJS.</span>
@@ -241,7 +241,7 @@ class Index extends React.Component {
                           dateInnerStyle={{background: '#8c5fc4'}}
                         >
                           <h3 style={{color: '#8c5fc4'}}>Madebycat, Istanbul</h3>
-                          <h4 style={{color: '#8c5fc4'}}>Front End Developer</h4>
+                          <h4 style={{color: '#8c5fc4'}}>Front-End Developer</h4>
                           <p>
                           <span style={{color: getRandomColor()}}>Deciding Information Architecture for clients, building websites.</span>
                           </p>
@@ -297,7 +297,7 @@ class Index extends React.Component {
                           <h3 style={{color: '#e86971'}}>Abant İzzet Baysal University</h3>
                           <h4 style={{color: '#e86971'}}>Physics Bachelor's degree</h4>
                           <p>
-                            Took <span style={{color: getRandomColor()}}>java</span> and <span style={{color: getRandomColor()}}>html</span> classes as optional lessons.
+                            Took <span style={{color: getRandomColor()}}>Java</span> and <span style={{color: getRandomColor()}}>HTML</span> classes as optional lessons.
                           </p>
                         </TimelineItem>
                       </Timeline>
@@ -333,7 +333,7 @@ class Index extends React.Component {
                         <p className={classes.leftMarg}>
                           <a href="http://www.arcelikas.com" target="_blank" rel="noreferrer" style={{textDecoration:'none'}}>
                             <span style={{color: getRandomColor()}}>http://www.arcelikas.com</span><br />
-                            <span style={{color: getRandomColor()}}>.Net Project frontend implementation</span>
+                            <span style={{color: getRandomColor()}}>.Net Project Front-End implementation</span>
                           </a>
                         </p>
                         <p className={classes.leftMarg}>
@@ -377,7 +377,7 @@ class Index extends React.Component {
                         interests
                       </Typography>
                       <p className={classes.leftMarg}>
-                        <ColorizeWords text='music, photography, video, trips, learning' />
+                        <ColorizeWords text='music, photography, video, learning' />
                       </p>
                     </Grid>
                   </Grid>
