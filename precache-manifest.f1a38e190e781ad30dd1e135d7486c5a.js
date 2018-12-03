@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "fabb6f4e72148ce04f04",
+    "revision": "86a9907fcf2a014639be",
     "url": "/static/css/main.db62f8b8.chunk.css"
   },
   {
-    "revision": "fabb6f4e72148ce04f04",
-    "url": "/static/js/main.fabb6f4e.chunk.js"
+    "revision": "86a9907fcf2a014639be",
+    "url": "/static/js/main.86a9907f.chunk.js"
   },
   {
     "revision": "5633fd58fdd7cc3c1a87",
@@ -28,7 +28,7 @@ self.__precacheManifest = [
     "url": "/static/media/veysiyildiz.5fc7b170.pdf"
   },
   {
-    "revision": "1962ff6cc69f6023ca4cf869b926a41b",
+    "revision": "7cb5d27e299b63ede634bb87d0a3a7e8",
     "url": "/index.html"
   }
 ];
