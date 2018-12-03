@@ -1,19 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "744da5fcd3b6f24a8fd4",
-    "url": "/static/css/main.5f0c0744.chunk.css"
+    "revision": "fabb6f4e72148ce04f04",
+    "url": "/static/css/main.db62f8b8.chunk.css"
   },
   {
-    "revision": "744da5fcd3b6f24a8fd4",
-    "url": "/static/js/main.744da5fc.chunk.js"
+    "revision": "fabb6f4e72148ce04f04",
+    "url": "/static/js/main.fabb6f4e.chunk.js"
   },
   {
-    "revision": "44f7d1dce89033a7b5df",
-    "url": "/static/css/1.3001490b.chunk.css"
+    "revision": "5633fd58fdd7cc3c1a87",
+    "url": "/static/css/1.ec586277.chunk.css"
   },
   {
-    "revision": "44f7d1dce89033a7b5df",
-    "url": "/static/js/1.44f7d1dc.chunk.js"
+    "revision": "5633fd58fdd7cc3c1a87",
+    "url": "/static/js/1.5633fd58.chunk.js"
   },
   {
     "revision": "229c360febb4351a89df",
@@ -28,7 +28,7 @@ self.__precacheManifest = [
     "url": "/static/media/veysiyildiz.5fc7b170.pdf"
   },
   {
-    "revision": "a722ff45da54064e71029a11a581ebcc",
+    "revision": "1962ff6cc69f6023ca4cf869b926a41b",
     "url": "/index.html"
   }
 ];
