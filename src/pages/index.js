@@ -2,6 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import VisibilitySensor from 'react-visibility-sensor';
+import ReactGA from 'react-ga';
 
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
@@ -108,6 +109,12 @@ class Index extends React.Component {
     this.onVisibilitySensorChange = this.onVisibilitySensorChange.bind(this);
     this.state = { visible: false };
   }
+  handleClick() {
+    ReactGA.event({
+      category: 'Cv Download',
+      action: 'Clicked Download Button'    
+    });
+  }
 
   onVisibilitySensorChange(isVisible) {
     if (isVisible) {
@@ -146,7 +153,7 @@ class Index extends React.Component {
 
                     </CardContent>
                   </Card>
-                  <Button variant="extendedFab" href={cvpdf} aria-label="download cv" component="a" className={classes.button}>
+                  <Button variant="extendedFab" onClick={()=>{this.handleClick()}} href={cvpdf} aria-label="download cv" component="a" className={classes.button}>
                     download cv
                   </Button>
                 </Grid>
@@ -219,15 +226,15 @@ class Index extends React.Component {
                             <span style={{color: getRandomColor()}}>Mentored and trained 4 junior Front-End Developers in 8 years.</span>
                           </p>
                           <p>
-                            <span style={{color: getRandomColor()}}>Responsible for all aspects of frontend architecture and development, including business focussed trade-offs around technology, features, quality and test strategy.</span></p>
+                            <span style={{color: getRandomColor()}}>Responsible for all aspects of Front-End architecture and development, including business focussed trade-offs around technology, features, quality and test strategy.</span></p>
                           <p>
-                            <span style={{color: getRandomColor()}}>Worked with the team of Designers and Back-End Developers to gather requirements and enhance the project’s functionality and add new features.</span>
+                            <span style={{color: getRandomColor()}}>Worked with all team members (Designers and Back-End Developers) to collect requirements and assemble the project’s functionality and add new features.</span>
                           </p>
                           <p>
                             <span style={{color: getRandomColor()}}>Developed the UI, layout and Front-End programming for the web applications using HTML, CSS, jQuery and JavaScript that matches requirements.</span>
                           </p>
                           <p>
-                            <span style={{color: getRandomColor()}}>Responsible for all client side UI Validation, custom validations and implementing Business logic based on user selection using JQuery UI and ReactJS.</span>
+                            <span style={{color: getRandomColor()}}>Responsible for all client side UI Development, custom validations and implementing Business logic based on project requirements using JQuery UI and/or ReactJS.</span>
                           </p>
                           <p>
                             <span style={{color: getRandomColor()}}>Involved in developing the responsive web pages for mobile, tablet and desktop using CSS3 Media queries.</span>
