@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import data, { getRandomColor } from '../data';
 
 class ColorizeWords extends Component {
@@ -10,15 +10,9 @@ class ColorizeWords extends Component {
               <p>loading...</p>
             );
           }
-		return (
-			<Fragment>
-                {
-                    words && words.map((word, key)=>(
-                        <span key={key} style={{color: getRandomColor()}}>{word}{seperator || ' '}</span>
-                    ))
-                }
-			</Fragment>
-		);
+		return words && words.map((word, key)=>(
+      <span key={key} style={{color: getRandomColor()}}>{word}{seperator || ' '}</span>
+    ))
 	}
 }
 

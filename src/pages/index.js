@@ -215,13 +215,33 @@ class Index extends React.Component {
                         work experience & education
                       </Typography>
                       <Timeline lineColor={'#61b8ff'} >
-                        <TimelineItem
-                          dateText="11/2010 – Now"
+                      <TimelineItem
+                          dateText="03/2019 – Now"
                           bodyContainerStyle={{color: '#fff'}}
                           dateInnerStyle={{background: '#61b8ff'}}
                         >
-                          <h3 style={{color: '#61b8ff'}}>Overteam, Istanbul</h3>
+                          <h3 style={{color: '#61b8ff'}}>SmartGift, Istanbul</h3>
                           <h4 style={{color: '#61b8ff'}}>Senior Front-End Developer</h4>
+                          <p>
+                            <span style={{color: getRandomColor()}}>Developed new gifting experience in single React project for multiple brands that shows different themes based on domain.</span>
+                          </p>
+                          <p>
+                            <span style={{color: getRandomColor()}}>Created gift basket widget for brands to add send via smartgift experience. Single source and themed for brands based on brand code.</span></p>
+                          <p>
+                            <span style={{color: getRandomColor()}}>Creating new affiliate marketing web application for smartGift. -<a href="https://www.smartgiftit.com" target="_blank">smartgiftit.com</a></span>
+                          </p>
+                          <p>
+                            <span style={{color: getRandomColor()}}>Maintaning the existing projects.</span>
+                          </p>
+                          <span className={classes.timelineDate}></span>
+                        </TimelineItem>
+                        <TimelineItem
+                          dateText="11/2010 – 03/2019"
+                          bodyContainerStyle={{color: '#fff'}}
+                          dateInnerStyle={{background: '#e86971'}}
+                        >
+                          <h3 style={{color: '#e86971'}}>Overteam, Istanbul</h3>
+                          <h4 style={{color: '#e86971'}}>Senior Front-End Developer</h4>
                           <p>
                             <span style={{color: getRandomColor()}}>Mentored and trained 4 junior Front-End Developers in 8 years.</span>
                           </p>

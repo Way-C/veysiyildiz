@@ -10,27 +10,27 @@ const data = {
   skills: [
     {
     label: 'React',
-    fontSize: 6,
+    fontSize: 8,
     opacity: 8,
     },
     {
     label: 'jQuery',
-    fontSize: 9,
+    fontSize: 8,
     opacity: 9,
     },
     {
     label: 'ES6',
-    fontSize: 4,
+    fontSize: 7,
     opacity: 7,
     },
     {
     label: 'webpack',
-    fontSize: 4,
-    opacity: 4,
+    fontSize: 6,
+    opacity: 6,
     },
     {
     label: 'Redux',
-    fontSize: 4,
+    fontSize: 8,
     opacity: 7,
     },
     {
@@ -100,12 +100,12 @@ const data = {
     },
     {
     label: 'Redux Saga',
-    fontSize: 4,
+    fontSize: 6,
     opacity: 6,
     },
     {
     label: 'Immutable',
-    fontSize: 4,
+    fontSize: 7,
     opacity: 5,
     },
     {
@@ -114,23 +114,13 @@ const data = {
     opacity: 6,
     },
     {
-    label: 'Bootstrap',
-    fontSize: 6,
-    opacity: 8,
-    },
-    {
-    label: 'Material.UI',
-    fontSize: 6,
-    opacity: 8,
-    },
-    {
     label: 'GraphQL',
     fontSize: 1,
     opacity: 4,
     },
     {
     label: 'Babel',
-    fontSize: 4,
+    fontSize: 7,
     opacity: 6,
     },
     {
