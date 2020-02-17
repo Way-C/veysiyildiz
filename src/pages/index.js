@@ -340,6 +340,12 @@ class Index extends React.Component {
                           projects & developments
                         </Typography>
                         <p className={classes.leftMarg}>
+                          <a href="https://www.smartgiftit.com" target="_blank" rel="noreferrer" style={{textDecoration:'none'}}>
+                            <span style={{color: getRandomColor()}}>https://www.smartgiftit.com</span><br />
+                            <ColorizeWords text='ReactJs, Redux, Redux Saga, Webpack, Node, Es6, strapi' seperator=',' />
+                          </a>
+                        </p>
+                        <p className={classes.leftMarg}>
                           <a href="https://www.npmjs.com/package/d3-tagcloud-for-react" target="_blank" rel="noreferrer" style={{textDecoration:'none'}}>
                             <span style={{color: getRandomColor()}}>d3 tagcloud for react</span><br />
                             <span style={{color: getRandomColor()}}>Another tag cloud for react with two variable fontSize and opacity, using the wonderful d3-cloud under the hood.</span>
