@@ -18,7 +18,7 @@ import TagCloud, {renderData} from 'd3-tagcloud-for-react';
 import ColorizeWords from '../components/ColorizeWords';
 import data, { getRandomColor } from '../data';
 import avatar from '../veysi.jpg'
-import cvpdf from '../veysiyildiz.pdf'
+import cvpdf from '../veysiyildiz-resume.pdf'
 import { withStyles } from '@material-ui/core/styles';
 import withRoot from '../withRoot';
 
@@ -216,22 +216,28 @@ class Index extends React.Component {
                       </Typography>
                       <Timeline lineColor={'#61b8ff'} >
                       <TimelineItem
-                          dateText="03/2019 – Now"
+                          dateText="03/2019 – Present"
                           bodyContainerStyle={{color: '#fff'}}
                           dateInnerStyle={{background: '#61b8ff'}}
                         >
                           <h3 style={{color: '#61b8ff'}}>SmartGift, Istanbul</h3>
                           <h4 style={{color: '#61b8ff'}}>Senior Front-End Developer</h4>
                           <p>
-                            <span style={{color: getRandomColor()}}>Developed new gifting experience in single React project for multiple brands that shows different themes based on domain.</span>
+                            <span style={{color: getRandomColor()}}>Responsible for all aspects of Front-End architecture and development, including business focussed trade-offs around technology, features, quality and test strategy.</span>
                           </p>
                           <p>
-                            <span style={{color: getRandomColor()}}>Created gift basket widget for brands to add send via smartgift experience. Single source and themed for brands based on brand code.</span></p>
+                            <span style={{color: getRandomColor()}}>Worked with all team members (product owners, designers and back-end developers) to collect requirements and assemble the project’s functionality and add new features.</span></p>
                           <p>
-                            <span style={{color: getRandomColor()}}>Creating new affiliate marketing web application for smartGift. -<a href="https://www.smartgiftit.com" target="_blank">smartgiftit.com</a></span>
+                            <span style={{color: getRandomColor()}}>Developed new gifting experience for multiple brands using React, that shows different themes based on domain.</span>
                           </p>
                           <p>
-                            <span style={{color: getRandomColor()}}>Maintaning the existing projects.</span>
+                            <span style={{color: getRandomColor()}}>Created plug-and-play widget using React that can be placed on any website. The widget acts like a shopping basket and allows customers to add their items to gift in it and initialize the SmartGift experience.</span>
+                          </p>
+                          <p>
+                            <span style={{color: getRandomColor()}}>Created the storefront application of an affiliate marketing website from scratch. <a href="https://www.smartgiftit.com" target="_blank">smartgiftit.com</a></span>
+                          </p>
+                          <p>
+                            <span style={{color: getRandomColor()}}>Maintained the existing projects and added new features to them.</span>
                           </p>
                           <span className={classes.timelineDate}></span>
                         </TimelineItem>
@@ -246,23 +252,17 @@ class Index extends React.Component {
                             <span style={{color: getRandomColor()}}>Mentored and trained 4 junior Front-End Developers in 8 years.</span>
                           </p>
                           <p>
-                            <span style={{color: getRandomColor()}}>Responsible for all aspects of Front-End architecture and development, including business focussed trade-offs around technology, features, quality and test strategy.</span></p>
-                          <p>
-                            <span style={{color: getRandomColor()}}>Worked with all team members (Designers and Back-End Developers) to collect requirements and assemble the project’s functionality and add new features.</span>
-                          </p>
-                          <p>
-                            <span style={{color: getRandomColor()}}>Developed the UI, layout and Front-End programming for the web applications using HTML, CSS, jQuery and JavaScript that matches requirements.</span>
-                          </p>
+                            <span style={{color: getRandomColor()}}>Developed the UI, layout and Front-End programming for the web applications using HTML, CSS, jQuery and JavaScript that matches requirements.</span></p>
                           <p>
                             <span style={{color: getRandomColor()}}>Responsible for all client side UI Development, custom validations and implementing Business logic based on project requirements using JQuery UI and/or ReactJS.</span>
                           </p>
                           <p>
-                            <span style={{color: getRandomColor()}}>Involved in developing the responsive web pages for mobile, tablet and desktop using CSS3 Media queries.</span>
+                            <span style={{color: getRandomColor()}}>Involved in developing responsive web pages for mobile, tablet and desktop using CSS3 Media queries.</span>
                           </p>
                           <span className={classes.timelineDate}></span>
                         </TimelineItem>
                         <TimelineItem
-                          dateText="04/2009 – 11/2010"
+                          dateText="08/2008 – 11/2010"
                           className=""
                           bodyContainerStyle={{color: '#fff'}}
                           dateInnerStyle={{background: '#8c5fc4'}}
@@ -276,43 +276,10 @@ class Index extends React.Component {
                           <span style={{color: getRandomColor()}}>Front-end coding and CMS integration of new projects.</span>
                           </p>
                           <p>
-                          <span style={{color: getRandomColor()}}>More HTML email templates.</span>
-                          </p>
-                        </TimelineItem>
-                        <TimelineItem
-                          dateText="11/2008 – 04/2009"
-                          className=""
-                          bodyContainerStyle={{color: '#fff'}}
-                          dateInnerStyle={{background: '#f7d286', color: '#333'}}
-                        >
-                          <h3 style={{color: '#f7d286'}}>Madebycat, Istanbul</h3>
-                          <h4 style={{color: '#f7d286'}}>Interface Coder</h4>
-                          <p>
-                            <span style={{color: getRandomColor()}}>Maintenance support for live projects</span>
+                          <span style={{color: getRandomColor()}}>Maintenance support for existing projects.</span>
                           </p>
                           <p>
-                            <span style={{color: getRandomColor()}}>Created HTML e-mail templates for e-mail marketing.</span>
-                          </p>
-                          <p>
-                            <span style={{color: getRandomColor()}}>Tested front-end code in multiple browsers to ensure cross-browser compatability.</span>
-                          </p>
-                          <p>
-                            Fixed front-end bugs (<ColorizeWords text='HTML, CSS, jQuery' />)
-                          </p>
-                        </TimelineItem>
-                        <TimelineItem
-                          dateText="08/2008 – 11/2008"
-                          className=""
-                          bodyContainerStyle={{color: '#fff'}}
-                          dateInnerStyle={{background: '#76bb7f'}}
-                        >
-                          <h3 style={{color: '#76bb7f'}}>Madebycat, Istanbul</h3>
-                          <h4 style={{color: '#76bb7f'}}>Junior Interface Coder</h4>
-                          <p>
-                            <span style={{color: getRandomColor()}}>Researched industry trends and websites to provide top quality design.</span>
-                          </p>
-                          <p>
-                            Workflow tools included: <ColorizeWords text='HTML, CSS, Javascript' /> and <ColorizeWords text='SVN' />.
+                          <span style={{color: getRandomColor()}}>Workflow tools included: HTML, CSS, Javascript and SVN.</span>
                           </p>
                         </TimelineItem>
                         <TimelineItem
